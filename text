@@ -1,0 +1,25 @@
+public class Hello {
+	public static void main(String[] args) {
+	short[] d = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22};
+	double[] x = new double[17];
+	for(int i=0; i<17; i++){
+		x[i] = Math.random() * 17 - 12;
+	}
+	double[][] d1 = new double[11][17];
+	for(int i=0; i<11; i++){
+		for(int j=0; j<17; j++){
+		if (d[i] == 14){
+		d1[i][j]=Math.pow(Math.tan(Math.sin(x[j])), 4/(Math.tan(Math.log1p(Math.abs(x[j])))-0.25));
+		}
+		else{
+		if(d[i]==4 | d[i]==6 | d[i]==8 | d[i]==12 | d[i]==20){
+		d1[i][j]=Math.log1p(Math.sqrt(Math.abs(x[j]))/Math.PI);
+		}  
+		else{
+			d1[i][j]=Math.pow(Math.PI*Math.pow(Math.E, Math.atan(Math.pow(Math.E, Math.abs(x[j])*(-1)))), 2);
+		}
+		System.out.printf("%4.2f", d1[i][j]);  
+		System.out.printf("  ");
+		}}}
+	}
+}
